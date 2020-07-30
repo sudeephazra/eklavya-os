@@ -1,0 +1,12 @@
+[Unit]
+Description=Eklavya Splash Screen
+DefaultDependencies=no
+
+[Service]
+ExecStart=/usr/bin/fbi --noverbose -a /etc/eklavya/images/eklavya_default_bootsplash.png
+ExecPostStart=/bin/sleep 1
+StandardInput=tty
+StandardOutput=tty
+
+[Install]
+WantedBy=sysinit.target
