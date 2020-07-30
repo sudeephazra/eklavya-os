@@ -1,11 +1,13 @@
 #!/bin/bash -e
 
 #Create a custom location for eklavya 
-if [ ! -f "/etc/eklavya"]; then 
+on_chroot << EOF
+if [ ! -f "/etc/eklavya" ]; then 
 	mkdir -p /etc/eklavya
 	mkdir -p /etc/eklavya/images
 	mkdir -p /etc/eklavya/scripts
 fi
+EOF
 
 #Copy files to a staging area
 cp -f files/eklavya_default_wallpaper.png "${ROOTFS_DIR}/etc/eklavya/images"
@@ -25,6 +27,8 @@ EOF
 
 #Copy the icons
 
+#Copy the wallpaper into the default location
+cp -f files/os-release "${ROOTFS_DIR}/usr/lib/os-release"
 
 #Update the repository
 on_chroot << EOF
