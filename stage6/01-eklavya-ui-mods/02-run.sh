@@ -7,6 +7,7 @@ echo " logo.nologo consoleblank=0 loglevel=1 quiet " >> "${ROOTFS_DIR}/boot/cmdl
 
 #Copy the boot splash screen service file 
 install -m 644 files/splashscreen.service "${ROOTFS_DIR}/etc/systemd/system"
+
 #Enable the boot splash screen service
 on_chroot << EOF
 systemctl disable getty@tty3
