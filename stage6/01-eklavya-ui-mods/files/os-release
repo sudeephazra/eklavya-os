@@ -1,0 +1,10 @@
+PRETTY_NAME="Eklavya GNU/Linux 10 (buster)"
+NAME="Eklavya GNU/Linux"
+VERSION_ID="10"
+VERSION="10 (buster)"
+VERSION_CODENAME=eklavya-buster
+ID=eklavya
+ID_LIKE=debian
+HOME_URL="http://www.raspbian.org/"
+SUPPORT_URL="http://www.raspbian.org/RaspbianForums"
+BUG_REPORT_URL="http://www.raspbian.org/RaspbianBugs"
