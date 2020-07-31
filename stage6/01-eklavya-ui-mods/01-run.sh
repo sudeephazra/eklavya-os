@@ -26,6 +26,7 @@ sed -i 's+^wallpaper=.*$+wallpaper=/usr/share/rpd-wallpaper/eklavya_default_wall
 EOF
 
 #Copy the icons
+cp -f files/eklavya-logo.png "${ROOTFS_DIR}/usr/share/raspberrypi-artwork"
 
 #Copy the wallpaper into the default location
 cp -f files/os-release "${ROOTFS_DIR}/usr/lib/os-release"
