@@ -3,6 +3,10 @@
 run_sub_stage()
 {
 	log "Begin ${SUB_STAGE_DIR}"
+	log "Updating repository before installing for ${SUB_STAGE_DIR}"
+	on_chroot << EOF
+apt-get update
+EOF
 	pushd "${SUB_STAGE_DIR}" > /dev/null
 	for i in {00..99}; do
 		if [ -f "${i}-debconf" ]; then
