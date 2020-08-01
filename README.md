@@ -1,6 +1,6 @@
-# pi-gen
+# Eklavya OS (generator based on pi-gen)
 
-_Tool used to create the raspberrypi.org Raspbian images_
+_Tool used to create the Eklavys OS images (based on Raspbian)_
 
 
 ## Dependencies
@@ -13,8 +13,10 @@ to use the Docker build described below.
 To install the required dependencies for pi-gen you should run:
 
 ```bash
-apt-get install coreutils quilt parted qemu-user-static debootstrap zerofree zip \
-dosfstools bsdtar libcap2-bin grep rsync xz-utils file git curl bc
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install coreutils quilt parted qemu-user-static debootstrap zerofree zip 
+sudo apt-get install dosfstools bsdtar libcap2-bin grep rsync xz-utils file git curl bc
 ```
 
 The file `depends` contains a list of tools needed.  The format of this
@@ -332,6 +334,49 @@ follows:
 
 ## `64 Bit Systems`
 Please note there is currently an issue when compiling with a 64 Bit OS. See https://github.com/RPi-Distro/pi-gen/issues/271
+
+## Hash Sum Mismatch
+You might encounter this issue specially on the stage2
+```
+Get:223 http://mirror.ossplanet.net/raspbian/raspbian buster/main armhf xauth armhf 1:1.0.10-1 [36.4 kB]                                                                                                            
+Get:224 http://mirror.ossplanet.net/raspbian/raspbian buster/main armhf xdg-user-dirs armhf 0.17-2 [52.1 kB]                                                                                                        
+Fetched 145 MB in 6min 30s (371 kB/s)                                                                                                                                                                               
+E: Failed to fetch http://mirror.ossplanet.net/raspbian/raspbian/pool/main/i/icu/libicu63_63.1-6+deb10u1_armhf.deb  Hash Sum mismatch
+   Hashes of expected file:
+    - SHA256:6cec406f924b93a64ae4a9926ee3b51690e757d607bbf5990260921ab2660a0c
+    - SHA1:e6a6ee2a13aac9444f644338dd34b9606c3f2853 [weak]
+    - MD5Sum:9d40e37354c42801f34f46d5bbef0908 [weak]
+    - Filesize:7972656 [weak]
+   Hashes of received file:
+    - SHA256:ffd091c579a41698fed5d3ed15dda557c61e5aa4513090c2cfc28d0be0162361
+    - SHA1:5d09336baffc8b5965001a03da17a1a3af9f3725 [weak]
+    - MD5Sum:d3e0b07eb6acd458595af47217452303 [weak]
+    - Filesize:7972656 [weak]
+   Last modification reported: Thu, 26 Mar 2020 01:30:47 +0000
+E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+```
+To resolve this, please run the following commands
+
+```
+sudo rm -Rf /var/lib/apt/lists/* 
+sudo apt-get clean
+sudo apt-get update
+```
+
+## Locale Error
+You might receive the following error message during the build
+```
+perl: warning: Falling back to the standard locale ("C").
+The user `eklavya' is already a member of `i2c'.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = "en_US.UTF-8",
+	LC_ALL = "en_US.UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+```
+
 
 ## `binfmt_misc`
 
