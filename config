@@ -1,0 +1,15 @@
+IMG_NAME="eklavya-os"
+RELEASE="buster"
+
+TIMEZONE_DEFAULT="Asia/Kolkata"
+LOCALE_DEFAULT="en_GB.UTF-8"
+TARGET_HOSTNAME="eklavya"
+KEYBOARD_KEYMAP="us"
+KEYBOARD_LAYOUT="English (US)"
+
+FIRST_USER_NAME="eklavya"
+FIRST_USER_PASS="secret123"
+ENABLE_SSH=0
+DEPLOY_ZIP=1
+
+DEPLOY_DIR="/media/pi/BC32-7783/deploy"
