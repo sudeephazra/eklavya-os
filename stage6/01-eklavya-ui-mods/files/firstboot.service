@@ -1,0 +1,14 @@
+[Unit]
+Description=Eklavya Firstboot
+After=network.target
+Before=rc-local.service
+ConditionFileNotEmpty=/etc/eklavya/scripts/firstboot.sh
+
+[Service]
+ExecStart=/etc/eklavya/scripts/firstboot.sh
+ExecStartPost=/bin/mv /etc/eklavya/scripts/firstboot.sh /etc/eklavya/scripts/firstboot.sh.done
+Type=oneshot
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target

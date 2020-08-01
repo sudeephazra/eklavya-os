@@ -13,6 +13,8 @@ EOF
 cp -f files/eklavya_default_wallpaper.png "${ROOTFS_DIR}/etc/eklavya/images"
 cp -f files/eklavya_default_bootsplash.png "${ROOTFS_DIR}/etc/eklavya/images"
 cp -f files/splashscreen.service "${ROOTFS_DIR}/etc/eklavya/scripts"
+cp -f files/firstboot.service "${ROOTFS_DIR}/etc/eklavya/scripts"
+cp -f files/firstboot.sh "${ROOTFS_DIR}/etc/eklavya/scripts"
 
 #Copy the wallpaper into the default location
 cp -f files/eklavya_default_wallpaper.png "${ROOTFS_DIR}/usr/share/rpd-wallpaper"
