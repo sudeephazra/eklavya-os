@@ -20,3 +20,8 @@ systemctl enable splashscreen
 systemctl enable firstboot
 EOF
 
+#Customizing the values for the PiWizard
+log "Customizing the wizard"
+sed -i 's+Welcome to Raspberry Pi+Welcome to Eklavya OS+g' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
+sed -i 's+Welcome to the Raspberry Pi Desktop!+Welcome to the Eklavya OS Desktop!+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
+sed -i 's+<property name="pixbuf">raspberry-pi-logo.png</property>+<property name="pixbuf">eklavya-icon.png</property>+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
