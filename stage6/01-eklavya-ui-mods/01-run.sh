@@ -15,7 +15,7 @@ cp -f files/eklavya_default_wallpaper.png "${ROOTFS_DIR}/etc/eklavya/images"
 cp -f files/eklavya_default_bootsplash.png "${ROOTFS_DIR}/etc/eklavya/images"
 cp -f files/splashscreen.service "${ROOTFS_DIR}/etc/eklavya/scripts"
 cp -f files/firstboot.service "${ROOTFS_DIR}/etc/eklavya/scripts"
-cp -f files/firstboot.sh "${ROOTFS_DIR}/etc/eklavya/scripts"
+#install -m 755 files/noclear.conf "${ROOTFS_DIR}/etc/systemd/system/getty@tty1.service.d/noclear.conf files/firstboot.sh "${ROOTFS_DIR}/etc/eklavya/scripts"
 cp -f files/eklavya-icons/*.png "${ROOTFS_DIR}/etc/eklavya/icons"
 
 #Copy the wallpaper into the default location
@@ -35,6 +35,10 @@ cp -f files/eklavya-icons/eklavya_16.png "${ROOTFS_DIR}/usr/share/icons/PiXflat/
 cp -f files/eklavya-icons/eklavya_24.png "${ROOTFS_DIR}/usr/share/icons/PiXflat/24x24/places/eklavya-icon.png"
 cp -f files/eklavya-icons/eklavya_32.png "${ROOTFS_DIR}/usr/share/icons/PiXflat/32x32/places/eklavya-icon.png"
 cp -f files/eklavya-icons/eklavya_48.png "${ROOTFS_DIR}/usr/share/icons/PiXflat/48x48/places/eklavya-icon.png"
+cp -f files/eklavya-icons/eklavya_64.png "${ROOTFS_DIR}/usr/share/icons/PiXflat/64x64/places/eklavya-icon.png"
+cp -f files/eklavya-icons/eklavya_80.png "${ROOTFS_DIR}/usr/share/icons/PiXflat/80x80/places/eklavya-icon.png"
+cp -f files/eklavya-icons/eklavya_96.png "${ROOTFS_DIR}/usr/share/icons/PiXflat/96x96/places/eklavya-icon.png"
+cp -f files/eklavya-icons/eklavya_128.png "${ROOTFS_DIR}/usr/share/icons/PiXflat/128x128/places/eklavya-icon.png"
 
 #To enable Eklavya icon as a system icon
 cp -f files/eklavya-icons/eklavya_48.png "${ROOTFS_DIR}/usr/share/icons/hicolor/48x48/apps/eklavya-icon.png"
