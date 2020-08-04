@@ -10,18 +10,19 @@ sed -i 's+plymouth\.ignore-serial-consoles.*$+plymouth\.ignore-serial-consoles l
 #Copy the boot splash screen service file 
 install -m 644 files/splashscreen.service "${ROOTFS_DIR}/etc/systemd/system"
 
-#Copy the initial boot wizard 
-#install -m 755 files/firstboot.service "${ROOTFS_DIR}/etc/systemd/system"
-
 #Enable the boot splash screen service
 on_chroot << EOF
 systemctl disable getty@tty3
 systemctl enable splashscreen
 EOF
-#systemctl enable firstboot
+
 
 #Customizing the values for the PiWizard
-log "Customizing the wizard"
+log "Customizing the first-boot wizard"
+
+#To enable the icon for Eklavya Wizard
+cp -f files/eklavya-icons/eklavya_56.png "${ROOTFS_DIR}/usr/share/piwiz/eklavya-icon.png"
+
 #Customizing the menu bar and the panel icon
 sed -i 's+Welcome to Raspberry Pi+Welcome to Eklavya OS+g' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
 sed -i 's+<property name="icon">/usr/share/raspberrypi-artwork/raspitr\.png</property>+<property name="icon">eklavya-icon.png</property>+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
@@ -35,3 +36,4 @@ if [ -f ${ROOTFS_DIR}/etc/xdg/autostart/piwiz.desktop ]; then
 else
 	echo "Autostart not enabled for the Wizard"
 fi
+

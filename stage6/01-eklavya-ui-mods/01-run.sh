@@ -55,7 +55,7 @@ cp -f files/msteams/msteams-icon.png "${ROOTFS_DIR}/usr/share/icons/hicolor/48x4
 install -m 755 files/msteams/msteams.desktop "${ROOTFS_DIR}/usr/share/applications/"
 install -m 755 files/msteams/msteams.sh "${ROOTFS_DIR}/etc/eklavya/scripts/"
 
-#Copy the files for MS Teams
+#Copy the files for Zoom
 cp -f files/zoom/zoom-icon.png "${ROOTFS_DIR}/usr/share/icons/hicolor/48x48/apps/zoom-icon.png"
 install -m 755 files/zoom/zoom.desktop "${ROOTFS_DIR}/usr/share/applications/"
 install -m 755 files/zoom/zoomconf.sh "${ROOTFS_DIR}/etc/eklavya/scripts/"
