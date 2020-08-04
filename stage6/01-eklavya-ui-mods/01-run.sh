@@ -7,6 +7,9 @@ if [ ! -f "/etc/eklavya" ]; then
 	mkdir -p /etc/eklavya/images
 	mkdir -p /etc/eklavya/icons
 	mkdir -p /etc/eklavya/scripts
+	
+	mkdir -p /tmp/eklavya-msteams
+	mkdir -p /tmp/eklavya-zoom
 fi
 EOF
 
@@ -44,9 +47,15 @@ cp -f files/eklavya-icons/eklavya_128.png "${ROOTFS_DIR}/usr/share/icons/PiXflat
 cp -f files/eklavya-icons/eklavya_48.png "${ROOTFS_DIR}/usr/share/icons/hicolor/48x48/apps/eklavya-icon.png"
 cp -f files/eklavya-icons/eklavya_48.png "${ROOTFS_DIR}/usr/share/raspberrypi-artwork/eklavya-icon.png"
 
-#To enable the icon for Eklavya Wizard
-cp -f files/eklavya-icons/eklavya_56.png "${ROOTFS_DIR}/usr/share/piwiz/eklavya-icon.png"
-
 #Copy the updated OS information
 cp -f files/os-release "${ROOTFS_DIR}/usr/lib/os-release"
 
+#Copy the files for MS Teams
+cp -f files/msteams/msteams-icon.png "${ROOTFS_DIR}/usr/share/icons/hicolor/48x48/apps/msteams-icon.png"
+install -m 755 files/msteams/msteams.desktop "${ROOTFS_DIR}/usr/share/applications/"
+install -m 755 files/msteams/msteams.sh "${ROOTFS_DIR}/etc/eklavya/scripts/"
+
+#Copy the files for MS Teams
+cp -f files/zoom/zoom-icon.png "${ROOTFS_DIR}/usr/share/icons/hicolor/48x48/apps/zoom-icon.png"
+install -m 755 files/zoom/zoom.desktop "${ROOTFS_DIR}/usr/share/applications/"
+install -m 755 files/zoom/zoomconf.sh "${ROOTFS_DIR}/etc/eklavya/scripts/"

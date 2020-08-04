@@ -1,0 +1,17 @@
+[Desktop Entry]
+Version=1.0
+Name=Zoom Conference
+GenericName=Zoom Conference
+Comment=Join Zoom Conference
+Exec=/etc/eklavya/scripts/zoomconf.sh
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=zoom-icon
+Categories=Office;Chat;
+MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;
+StartupNotify=true
+X-AppInstall-Package=chromium-browser
+Name[en_US]=Zoom Conference
+Name[en_GB]=Zoom Conference
+Name[en_IN]=Zoom Conference
