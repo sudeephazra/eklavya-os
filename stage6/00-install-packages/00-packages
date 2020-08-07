@@ -6,6 +6,7 @@ scala
 golang
 rustc rust-doc rust-gdb rust-lldb
 codelite eric
+sqlite sqlitebrowser
 git-cola
 subversion rapidsvn 
 gcompris kalzium tuxmath childsplay geogebra 
