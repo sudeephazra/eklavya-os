@@ -376,8 +376,15 @@ perl: warning: Please check that your locale settings:
     are supported and installed on your system.
 perl: warning: Falling back to the standard locale ("C").
 ```
-
-
+Run the following commands to add the appropriate locale
+```
+dpkg-reconfigure locales # add the en_IN.UTF-8 locale and set as default
+export LANGUAGE=en_IN.UTF-8
+export LANG=en_IN.UTF-8
+export LC_ALL=en_IN.UTF-8
+locale-gen en_IN.UTF-8
+update-locale en_IN.UTF-8
+```
 ## `binfmt_misc`
 
 Linux is able execute binaries from other architectures, meaning that it should be
