@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 #Enable the default wallpaper and logo on the login screen 
-sed -i 's+^wallpaper=.*$+wallpaper=/usr/share/rpd-wallpaper/eklavya_default_wallpaper.png+g' ${ROOTFS_DIR}/etc/lightdm/pi-greeter.conf
+sed -i 's+^wallpaper=.*$+wallpaper=/etc/eklavya/images/eklavya_login.png+g' ${ROOTFS_DIR}/etc/lightdm/pi-greeter.conf
 sed -i 's+^default-user-image=.*$+default-user-image=/usr/share/raspberrypi-artwork/eklavya-logo.png+g' ${ROOTFS_DIR}/etc/lightdm/pi-greeter.conf
 
 #Customize the quick launch bar to have Firefox, File Browser and Deepin Terminal

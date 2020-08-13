@@ -16,6 +16,7 @@ EOF
 #Copy files to a staging area
 cp -f files/eklavya_default_wallpaper.png "${ROOTFS_DIR}/etc/eklavya/images"
 cp -f files/eklavya_default_bootsplash.png "${ROOTFS_DIR}/etc/eklavya/images"
+cp -f files/eklavya_login.png "${ROOTFS_DIR}/etc/eklavya/images"
 cp -f files/splashscreen.service "${ROOTFS_DIR}/etc/eklavya/scripts"
 cp -f files/firstboot.service "${ROOTFS_DIR}/etc/eklavya/scripts"
 #install -m 755 files/noclear.conf "${ROOTFS_DIR}/etc/systemd/system/getty@tty1.service.d/noclear.conf files/firstboot.sh "${ROOTFS_DIR}/etc/eklavya/scripts"
