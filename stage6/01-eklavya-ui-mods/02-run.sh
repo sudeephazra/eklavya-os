@@ -37,3 +37,7 @@ else
 	echo "Autostart not enabled for the Wizard"
 fi
 
+#Classification of Electronics Software
+sed -i 's+^Categories=.*$+Categories=Electronics;' /usr/share/applications/caneda.desktop
+sed -i 's+^Categories=.*$+Categories=Electronics;' /usr/share/applications/arduino.desktop
+sed -i 's+^Categories=.*$+Categories=Electronics;' /usr/share/applications/fritzing.desktop
