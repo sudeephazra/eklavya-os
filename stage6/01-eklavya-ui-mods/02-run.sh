@@ -41,3 +41,4 @@ fi
 sed -i 's+^Categories=.*$+Categories=Electronics;' /usr/share/applications/caneda.desktop
 sed -i 's+^Categories=.*$+Categories=Electronics;' /usr/share/applications/arduino.desktop
 sed -i 's+^Categories=.*$+Categories=Electronics;' /usr/share/applications/fritzing.desktop
+sed -i 's+^Categories=.*$+Categories=Electronics;' /usr/share/applications/smartsim.desktop
