@@ -24,11 +24,13 @@ log "Customizing the first-boot wizard"
 cp -f files/eklavya-icons/eklavya_56.png "${ROOTFS_DIR}/usr/share/piwiz/eklavya-icon.png"
 
 #Customizing the menu bar and the panel icon
-sed -i 's+Welcome to Raspberry Pi+Welcome to Eklavya OS+g' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
+sed -i 's+Welcome to Raspberry Pi+Welcome to Eklavya OS Desktop+g' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
 sed -i 's+<property name="icon">/usr/share/raspberrypi-artwork/raspitr\.png</property>+<property name="icon">eklavya-icon.png</property>+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
 #Customizing the main panel of the application
-sed -i 's+Welcome to the Raspberry Pi Desktop!+Welcome to the Eklavya OS Desktop!+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
+sed -i 's+Welcome to the Raspberry Pi Desktop!+Welcome to the Eklavya Desktop!+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
 sed -i 's+<property name="pixbuf">raspberry-pi-logo.png</property>+<property name="pixbuf">eklavya-icon.png</property>+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
+sed -i 's+Your Raspberry Pi is now set up and ready to go+Your Eklavya Desktop is now set up and ready to go+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
+sed -i 's+restart your Pi so+restart your Eklavya Desktop so+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
 
 #Check if autostart of the wizard is enabled
 if [ -f ${ROOTFS_DIR}/etc/xdg/autostart/piwiz.desktop ]; then
@@ -39,7 +41,7 @@ fi
 
 #Classification of Electronics Software
 echo "Customizing Electronics software to point to the correct menu"
-sed -i 's+^Categories=.*$+Categories=Electronics;+' /usr/share/applications/caneda.desktop
-sed -i 's+^Categories=.*$+Categories=Electronics;+' /usr/share/applications/arduino.desktop
-sed -i 's+^Categories=.*$+Categories=Electronics;+' /usr/share/applications/fritzing.desktop
-sed -i 's+^Categories=.*$+Categories=Electronics;+' /usr/share/applications/smartsim.desktop
+sed -i 's+^Categories=.*$+Categories=Electronics;+' ${ROOTFS_DIR}/usr/share/applications/caneda.desktop
+sed -i 's+^Categories=.*$+Categories=Electronics;+' ${ROOTFS_DIR}/usr/share/applications/arduino.desktop
+sed -i 's+^Categories=.*$+Categories=Electronics;+' ${ROOTFS_DIR}/usr/share/applications/fritzing.desktop
+sed -i 's+^Categories=.*$+Categories=Electronics;+' ${ROOTFS_DIR}/usr/share/applications/smartsim.desktop
