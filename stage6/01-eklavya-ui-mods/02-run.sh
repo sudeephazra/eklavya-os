@@ -31,6 +31,9 @@ sed -i 's+Welcome to the Raspberry Pi Desktop!+Welcome to the Eklavya Desktop!+'
 sed -i 's+<property name="pixbuf">raspberry-pi-logo.png</property>+<property name="pixbuf">eklavya-icon.png</property>+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
 sed -i 's+Your Raspberry Pi is now set up and ready to go+Your Eklavya Desktop is now set up and ready to go+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
 sed -i 's+restart your Pi so+restart your Eklavya Desktop so+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
+sed -i 's+click the raspberry icon in the top left corner+click the Eklavya icon in the top left corner+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
+sed -i 's+The change will take effect when the Pi is restarted+The change will take effect when Eklavya OS Desktop is restarted+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
+sed -i 's+corner\.png+eklavya-menu\.png+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
 
 #Check if autostart of the wizard is enabled
 if [ -f ${ROOTFS_DIR}/etc/xdg/autostart/piwiz.desktop ]; then
