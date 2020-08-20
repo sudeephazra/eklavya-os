@@ -82,10 +82,7 @@ EOF
 run_stage(){
 	log "Begin ${STAGE_DIR}"
 	STAGE="$(basename "${STAGE_DIR}")"
-	log "Updating repository before installing for ${STAGE}"
-	on_chroot << EOF
-apt-get update
-EOF
+
 	pushd "${STAGE_DIR}" > /dev/null
 	unmount "${WORK_DIR}/${STAGE}"
 	STAGE_WORK_DIR="${WORK_DIR}/${STAGE}"
@@ -96,6 +93,10 @@ EOF
 		fi
 	fi
 	if [ ! -f SKIP ]; then
+		log "Updating repository before installing for ${STAGE}"
+		on_chroot << EOF
+apt-get update
+EOF
 		if [ "${CLEAN}" = "1" ]; then
 			if [ -d "${ROOTFS_DIR}" ]; then
 				rm -rf "${ROOTFS_DIR}"
