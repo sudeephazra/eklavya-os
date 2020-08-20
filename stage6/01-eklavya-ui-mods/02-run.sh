@@ -38,7 +38,8 @@ else
 fi
 
 #Classification of Electronics Software
-sed -i 's+^Categories=.*$+Categories=Electronics;' /usr/share/applications/caneda.desktop
-sed -i 's+^Categories=.*$+Categories=Electronics;' /usr/share/applications/arduino.desktop
-sed -i 's+^Categories=.*$+Categories=Electronics;' /usr/share/applications/fritzing.desktop
-sed -i 's+^Categories=.*$+Categories=Electronics;' /usr/share/applications/smartsim.desktop
+echo "Customizing Electronics software to point to the correct menu"
+sed -i 's+^Categories=.*$+Categories=Electronics;+' /usr/share/applications/caneda.desktop
+sed -i 's+^Categories=.*$+Categories=Electronics;+' /usr/share/applications/arduino.desktop
+sed -i 's+^Categories=.*$+Categories=Electronics;+' /usr/share/applications/fritzing.desktop
+sed -i 's+^Categories=.*$+Categories=Electronics;+' /usr/share/applications/smartsim.desktop
