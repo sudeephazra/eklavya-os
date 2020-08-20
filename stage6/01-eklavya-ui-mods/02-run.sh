@@ -22,6 +22,7 @@ log "Customizing the first-boot wizard"
 
 #To enable the icon for Eklavya Wizard
 cp -f files/eklavya-icons/eklavya_56.png "${ROOTFS_DIR}/usr/share/piwiz/eklavya-icon.png"
+cp -f files/eklavya-menu.png "${ROOTFS_DIR}/usr/share/piwiz/"
 
 #Customizing the menu bar and the panel icon
 sed -i 's+Welcome to Raspberry Pi+Welcome to Eklavya OS Desktop+g' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
