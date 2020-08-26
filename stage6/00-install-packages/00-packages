@@ -1,5 +1,5 @@
 fbi
-deepin-image-viewer deepin-terminal gnome-screenshot
+deepin-terminal gnome-screenshot
 audacious smplayer mpv 
 firefox-esr
 scala 
@@ -18,4 +18,4 @@ focuswriter lifeograph
 kdiff3 jeex
 pinta gimp inkscape
 caneda arduino fritzing octave
-vlc audacity webcamoid
+vlc audacity
