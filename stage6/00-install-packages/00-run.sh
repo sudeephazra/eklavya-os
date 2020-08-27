@@ -1,14 +1,11 @@
 #!/bin/bash -e
 
 #Adding repo for VSCode
-on_chroot << EOF
-wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add -
-echo 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list
-EOF
+log "Adding repo for VSCode"
+install -m 644 files/vscodium.list "${ROOTFS_DIR}/etc/apt/sources.list.d/"
+on_chroot apt-key add - < files/vscodium.gpg.key
 
 on_chroot << EOF
-apt update
-apt-get -y dist-upgrade
-apt-get clean
+apt-get update
 EOF
 
