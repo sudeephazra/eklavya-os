@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
 #Cleanup
+log "Running cleanup"
 on_chroot << EOF
 apt autoremove
 apt-get clean

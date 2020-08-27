@@ -1,4 +1,4 @@
 #!/bin/bash -e
 
 #
-echo "Eklavya SYS mods to be done..."
+log "Eklavya SYS mods to be done..."

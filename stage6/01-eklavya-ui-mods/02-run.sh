@@ -19,12 +19,12 @@ EOF
 
 #Customizing the values for the PiWizard
 log "Customizing the first-boot wizard"
-
 #To enable the icon for Eklavya Wizard
 cp -f files/eklavya-icons/eklavya_56.png "${ROOTFS_DIR}/usr/share/piwiz/eklavya-icon.png"
 cp -f files/eklavya-menu.png "${ROOTFS_DIR}/usr/share/piwiz/"
 
 #Customizing the menu bar and the panel icon
+log "Customizing the menu bar and the panel icon"
 sed -i 's+Welcome to Raspberry Pi+Welcome to Eklavya OS Desktop+g' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
 sed -i 's+<property name="icon">/usr/share/raspberrypi-artwork/raspitr\.png</property>+<property name="icon">eklavya-icon.png</property>+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
 #Customizing the main panel of the application
@@ -38,13 +38,13 @@ sed -i 's+corner\.png+eklavya-menu\.png+' ${ROOTFS_DIR}/usr/share/piwiz/piwiz.ui
 
 #Check if autostart of the wizard is enabled
 if [ -f ${ROOTFS_DIR}/etc/xdg/autostart/piwiz.desktop ]; then
-	echo "Autostart enabled for the Wizard"
+	log "Autostart enabled for the Wizard"
 else
-	echo "Autostart not enabled for the Wizard"
+	log "Autostart not enabled for the Wizard"
 fi
 
 #Classification of Electronics Software
-echo "Customizing Electronics software to point to the correct menu"
+log "Customizing Electronics software to point to the correct menu"
 sed -i 's+^Categories=.*$+Categories=Electronics;+' ${ROOTFS_DIR}/usr/share/applications/caneda.desktop
 sed -i 's+^Categories=.*$+Categories=Electronics;+' ${ROOTFS_DIR}/usr/share/applications/arduino.desktop
 sed -i 's+^Categories=.*$+Categories=Electronics;+' ${ROOTFS_DIR}/usr/share/applications/fritzing.desktop
