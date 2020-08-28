@@ -1,7 +1,3 @@
-fbi
-deepin-terminal gnome-screenshot
-audacious smplayer mpv 
-firefox-esr
 scala 
 golang
 rustc rust-doc rust-gdb rust-lldb
@@ -9,14 +5,5 @@ codelite eric
 sqlite3 sqlitebrowser
 git-cola
 subversion rapidsvn 
-gcompris kalzium tuxmath childsplay geogebra 
-connectagram einstein  dreamchess gnujump gnugo kcheckers moon-lander neverball pixfrogger
-tuxfootball extremetuxracer supertux
-qbittorrent
-gnucash homebank grisbi
-focuswriter lifeograph
 kdiff3 jeex
-pinta gimp inkscape
-caneda arduino fritzing octave
-vlc audacity
-mini-httpd lighttpd gnome-system-monitor
+mini-httpd lighttpd 
