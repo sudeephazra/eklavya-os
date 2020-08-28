@@ -1,6 +1,6 @@
 # Eklavya OS (generator based on pi-gen)
 
-_Tool used to create the Eklavys OS images (based on Raspbian)_
+_Tool used to create the Eklavya OS images (based on Raspbian)_
 
 
 ## Dependencies
