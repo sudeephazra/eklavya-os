@@ -66,3 +66,9 @@ log "Copy the files for Zoom"
 cp -f files/zoom/zoom-icon.png "${ROOTFS_DIR}/usr/share/icons/hicolor/48x48/apps/zoom-icon.png"
 install -m 755 files/zoom/zoom.desktop "${ROOTFS_DIR}/usr/share/applications/"
 install -m 755 files/zoom/zoomconf.sh "${ROOTFS_DIR}/etc/eklavya/scripts/"
+
+#Copy the files for Zoom
+log "Copy the files for Google Meet"
+cp -f files/google-meet/google-meet.png "${ROOTFS_DIR}/usr/share/icons/hicolor/48x48/apps/google-meet.png"
+install -m 755 files/google-meet/google-meet.desktop "${ROOTFS_DIR}/usr/share/applications/"
+install -m 755 files/google-meet/google-meet.sh "${ROOTFS_DIR}/etc/eklavya/scripts/"

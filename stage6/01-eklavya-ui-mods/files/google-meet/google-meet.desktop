@@ -1,0 +1,17 @@
+[Desktop Entry]
+Version=1.0
+Name=Google Meet
+GenericName=Google Meet
+Comment=Join Google Meet
+Exec=/etc/eklavya/scripts/google-meet.sh
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=google-meet
+Categories=Office;Chat;
+MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;
+StartupNotify=true
+X-AppInstall-Package=chromium-browser
+Name[en_US]=Google Meet
+Name[en_GB]=Google Meet
+Name[en_IN]=Google Meet
